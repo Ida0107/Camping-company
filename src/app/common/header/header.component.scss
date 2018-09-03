@@ -3,18 +3,23 @@
 .navbar {
     padding: 20px;
     margin-bottom: 40px;
-  
-   
+ 
     .navbar-brand {
       margin-right: 30px;
       font-size: 30px;
-      letter-spacing: 1px;
+      letter-spacing: 8px;
       color:$main-color;
       font-weight: 500;
+      font-family: sans-serif;
     }
   
   
     .nav-item {
       font-size: 14px;
+
+      .nav-link{
+        color:$main-color;
+      }
     }
   }
+
