@@ -1,0 +1,28 @@
+.footer{
+    position : absolute; 
+    width: 100%;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 140px;
+    
+    .p1{
+        
+        margin-top: 20px;
+        color:white;
+        font-size: 20px;
+    }
+
+    .p2{
+        color: rgb(119, 142, 243);
+        font-size: 30px;
+        font-weight: bold;
+        
+    }
+    
+}
+
+p{
+    margin-left: 20px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}

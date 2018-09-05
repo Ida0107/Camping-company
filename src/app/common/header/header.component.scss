@@ -14,12 +14,16 @@
     }
   
   
-    .nav-item {
-      font-size: 14px;
-
-      .nav-link{
+    .nav-item{
+      font-size: 17px;
+      font-weight: 420;
+      
+         
+      
+      .nav-link {
         color:$main-color;
+        pointer-events: auto;
+        
       }
     }
   }
-
