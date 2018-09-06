@@ -1,8 +1,11 @@
 @import 'variables';
+.header{
+  background-color: rgba(0,0,0,0.5);
+  height: 60px;
 
 .navbar {
-    padding: 20px;
-    margin-bottom: 40px;
+    padding: 0px 10px;
+    margin-bottom: 60px;
  
     .navbar-brand {
       margin-right: 30px;
@@ -28,6 +31,7 @@
       }
     }
   }
+}
 
   .check {
     background-color: rgba(0,0,0,0);

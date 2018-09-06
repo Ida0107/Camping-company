@@ -1,0 +1,39 @@
+
+<section id="login container">
+    <div class="cc-form">
+      <div class="row">
+        <div class="col-md-5">
+          <h1>Login</h1>
+          <form #loginForm = "ngForm">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email"
+                     class="form-control"
+                     id="email"
+                     name="email"
+                     required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password"
+                     class="form-control"
+                     id="password"
+                     name="password"
+                     required>
+            </div>
+            <button [disabled] = "!loginForm.form.valid" type="submit" class="btn btn-bwm">Submit</button>
+            <div style="margin-top: 20px;">
+                <p>Not Registered with us? <a routerLink='/register'>Signup</a></p>
+            </div>
+          </form>
+          
+        </div>
+        
+        <div class="col-md-6 ml-auto">
+          <div class="image-container">
+            <p class="catchphrase">YOUR DREAM VACATION IS A FEW CLICKS AWAY</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
