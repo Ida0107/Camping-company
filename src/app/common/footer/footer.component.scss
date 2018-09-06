@@ -1,9 +1,10 @@
 .footer{
-    position : absolute; 
+    position :fixed; 
     width: 100%;
     bottom: 0px;
     background-color: rgba(0, 0, 0, 0.5);
-    height: 140px;
+    height: 40px;
+    z-index: -1;
     
     .p1{
         
