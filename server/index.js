@@ -5,7 +5,8 @@ const Booking = require('./models/booking');
 const FakeDb = require('./fakedb');
 const bodyParser = require('body-parser');
 
-const bookingRoutes = require('./routes/routeBooking')
+const bookingRoutes = require('./routes/routeBooking');
+const userRoutes = require('./routes/routeusers');
 
 // mongoose.connect(config.DB_URI, {useNewUrlParser: true}).then(()=>{
 //     const fakeDb = new FakeDb;
@@ -17,6 +18,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use('/api/v1/booking', bookingRoutes);
+app.use('/api/v1/users', userRoutes);
 
 const PORT = process.env.PORT || 3001;
 

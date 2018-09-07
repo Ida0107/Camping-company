@@ -1,4 +1,4 @@
-const Booking = require('./models/booking');
+const Booking = require('../models/booking');
 
 exports.createBooking = function(req, res){
     const { name, address, startDate, endDate, email, phone } = req.body;
