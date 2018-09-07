@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { Routes, RouterModule} from '@angular/router';
@@ -26,11 +27,12 @@ const routes: Routes = [
     FontAwesomeModule,
     RouterModule.forChild(routes),
     FormsModule,
+    HttpClientModule
     
    
   ],
   providers: [
-      AuthService
+      AuthService,
   ],
   
 })

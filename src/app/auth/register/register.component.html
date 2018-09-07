@@ -6,7 +6,7 @@
             <div class="col-md-5">
               <form #registerForm = "ngForm"> 
                 <div class="form-group">
-                    <label for="username">Full Name</label>
+                    <label for="fullname">Full Name</label>
                       <input [(ngModel)]= "formData.fullname" 
                               type="text"
                               class="form-control"
@@ -15,7 +15,7 @@
                               required>
                 </div>
                 <div class="form-group">
-                  <label for="username">Phone no.</label>
+                  <label for="phone">Phone no.</label>
                     <input [(ngModel)]= "formData.phone" 
                             type="text"
                             class="form-control"
@@ -53,11 +53,11 @@
                 </div>
       
                 <div class="form-group">
-                  <label for="passwordConfirmation">Confirm Password</label>
+                  <label for="confirmpassword">Confirm Password</label>
                   <input [(ngModel)]= "formData.confirmpassword" 
                           type="password"
                           class="form-control"
-                          id="passwordConfirmation" 
+                          id="confirmpassword" 
                           name="confirmpassword"
                           required>
                 </div>

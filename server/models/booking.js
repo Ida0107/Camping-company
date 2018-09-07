@@ -9,7 +9,7 @@ const bookingschema = new Schema({
     endDate: { type: String, required: true },
     email: {type: String, required: true},
     phone: {type: String, required: true},
-    
+    user: {type: Schema.Types.ObjectId, ref: 'User'}
 });
 
 module.exports = mongoose.model('Booking', bookingschema);
