@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
   register(){
     this.auth.register(this.formData).subscribe(
     ()=>{
-      this.router.navigate(['login', {registerd: 'success'}]);
+      this.router.navigate(['/login', {registered: 'success'}]);
     },
     (errorResponse)=>{
       this.errors = errorResponse.error;

@@ -38,6 +38,8 @@
     border: 2px solid white;
     height: auto;
     border-radius: 100px;
+    -moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
   
   }
   .check:hover{

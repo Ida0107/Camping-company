@@ -4,28 +4,42 @@
       <div class="row">
         <div class="col-md-5">
           <h1>Login</h1>
-          <form #loginForm = "ngForm">
+          <div *ngIf ="notifyMessage" class= "alert alert-success">
+            {{notifyMessage}}
+          </div>
+          <form [formGroup] = "loginForm" (ngSubmit) = "login()">
             <div class="form-group">
               <label for="email">Email</label>
               <input type="email"
                      class="form-control"
                      id="email"
-                     name="email"
-                     required>
+                     formControlName="email">
             </div>
+            <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)" class= "alert alert-danger">
+              <div *ngIf="loginForm.controls['email'].errors.required">
+                Email is required
+              </div>
+              <div *ngIf="loginForm.controls['email'].errors.pattern">
+                Invalid Email
+              </div>
+            </div>
+
             <div class="form-group">
               <label for="password">Password</label>
               <input type="password"
                      class="form-control"
                      id="password"
-                     name="password"
-                     required>
+                     formControlName="password">
             </div>
-            <button [disabled] = "!loginForm.form.valid" type="submit" class="btn btn-bwm">Submit</button>
+            <button [disabled] ="!loginForm.valid" type="submit" class="btn btn-bwm">Submit</button>
             <div style="margin-top: 20px;">
                 <p>Not Registered with us? <a routerLink='/register'>Signup</a></p>
             </div>
           </form>
+
+          <div *ngIf = "errors.length>0" class= "alert alert-danger">
+            <p>{{errors[0].detail}}</p>
+          </div>
           
         </div>
         

@@ -8,3 +8,7 @@ html, body {
 .h5{
     color: $main-color; 
 }
+audio, canvas, progress,video{
+    display: inline-block;
+    vertical-align: baseline;
+}
