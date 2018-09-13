@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { MomentModule } from 'ngx-moment';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { Routes, RouterModule} from '@angular/router';
@@ -12,10 +13,12 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '../../../node_modules/@angular/forms';
 import { AuthService } from './shared/auth.service';
+import { AuthGuard } from './shared/auth.guard';
+import { TokenInterceptor} from './shared/token.interceptor';
 
 const routes: Routes = [
-    {path: 'login', component: LoginComponent},
-    {path: 'register', component: RegisterComponent}
+    {path: 'login', component: LoginComponent, canActivate:[AuthGuard]},
+    {path: 'register', component: RegisterComponent, canActivate: [AuthGuard]}
 ]
 @NgModule({
   declarations: [
@@ -37,7 +40,14 @@ const routes: Routes = [
   ],
   providers: [
       AuthService,
-      CookieService
+      CookieService,
+      AuthGuard,
+      {
+        provide: HTTP_INTERCEPTORS,
+        useClass: TokenInterceptor,
+        multi : true,
+      }
+    
   ],
   
 })

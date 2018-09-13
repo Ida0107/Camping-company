@@ -61,6 +61,12 @@ export class AuthService{
         return moment().isBefore(moment.unix(this.decodedToken.exp));
     }
 
+    public getAuthToken(): string {
+        debugger;
+        console.log(localStorage.getItem('cam-co'))
+        return localStorage.getItem('cam-co');
+    }
+
     public getUsername() : string {
         return this.decodedToken.username;
     }

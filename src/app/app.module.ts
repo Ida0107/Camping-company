@@ -8,21 +8,20 @@ import { FooterComponent } from './common/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AuthModule } from './auth/auth.module';
-import { AvailabilityComponent } from './availability/availability.component';
-import { VehiclesComponent } from './vehicles/vehicles.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { DestinationsComponent } from './destinations/destinations.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AuthGuard } from './auth/shared/auth.guard';
+import { LinksModule } from './links/links.module';
+
+// import { HTTP_INTERCEPTORS } from '@angular/common/http';
+// import { TokenInterceptor} from './auth/shared/token.interceptor';
 
 
 
 const routes: Routes = [
   {path: '', redirectTo:'/home', pathMatch:'full'},
   {path: 'home', component: HomePageComponent},
-  {path: 'availability', component: AvailabilityComponent},
-  {path: 'vehicles', component: VehiclesComponent},
   {path: 'aboutus', component: AboutUsComponent},
-  {path: 'destinations', component: DestinationsComponent},
   {path: 'contactus', component: ContactUsComponent}
   
 ]
@@ -33,10 +32,7 @@ const routes: Routes = [
     HeaderComponent,
     HomePageComponent,
     FooterComponent,
-    AvailabilityComponent,
-    VehiclesComponent,
     AboutUsComponent,
-    DestinationsComponent,
     ContactUsComponent,
     
   ],
@@ -46,10 +42,11 @@ const routes: Routes = [
     BsDatepickerModule.forRoot(),
     AuthModule,
     RouterModule.forRoot(routes),
+    LinksModule
     
   
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

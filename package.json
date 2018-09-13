@@ -34,6 +34,7 @@
     "jsonwebtoken": "^8.3.0",
     "moment": "^2.22.2",
     "mongoose": "^5.2.12",
+    "ng2-daterangepicker": "^2.0.12",
     "ngx-bootstrap": "^3.0.1",
     "ngx-cookie-service": "^1.0.10",
     "ngx-moment": "^3.1.0",

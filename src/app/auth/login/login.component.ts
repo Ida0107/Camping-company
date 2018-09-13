@@ -39,10 +39,11 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    
     this.auth.login(this.loginForm.value).subscribe(
     (token)=>{
-      
-      this.router.navigate(['destinations']);
+      debugger;
+      this.router.navigate(['/destinations']);
     },
     (errorResponse)=>{
       this.errors = errorResponse.error.errors;
